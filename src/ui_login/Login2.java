@@ -35,7 +35,6 @@ public class Login2 extends JFrame implements Botones,Archivos
 	public JTextField textField_password;
 	private JButton btnSalir;
 	
-	
 	private JPasswordField txtadmin;
 	private String contraseña =new String();
 
