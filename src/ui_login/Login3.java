@@ -41,15 +41,6 @@ public class Login3 extends JFrame implements Botones,Archivos
 
 	private String titulo ="titulo";
 	public JButton btnIngresar;
-	
-	String dirWord = "C:\\Program Files\\Microsoft Office\\Office15\\WINWORD.EXE";
-	String dirDeEstaClase = this.getClass().getProtectionDomain().getCodeSource().getLocation().toString();
-	//String dirFile = (new File(".")).getCanonicalPath();//direcion de este direcorio actual
-//	String dirFile = direccionActual();
-//	
-//	//Process word = Runtime.getRuntime().exec(dirWord+dirFile);
-//	Process word = Runtime.getRuntime().exec(dirWord+" "+dirFile);
-//	
 	private JMenuBar menuBar;
 	private JMenu mnAyuda;
 	private JMenuItem mntmVerDocumentacion;
@@ -60,10 +51,8 @@ public class Login3 extends JFrame implements Botones,Archivos
 	private JMenuItem mntmAbrirFilePara;
 	private JMenuItem mntmVolverALogin;
 	
-	
-	String label_legajo,label_contrasenia,label_nombre ; 
-	String botonSiguiente,botonSalir;
-	
+	String label_legajo="legajo",label_contrasenia="contrasenia",label_nombre="nombre" ; 
+	String botonSiguiente="siguiente",botonSalir="Salir";
 	
 	/**
 	 * Launch the application.
@@ -116,15 +105,8 @@ public class Login3 extends JFrame implements Botones,Archivos
 		
 		mntmVerDocumentacion = crearJMenuItemParaAbrirDocumentacion();
 		mnAyuda.add(mntmVerDocumentacion);
-		contentPane=new JPanel();
-		contentPane.setBorder(new EmptyBorder(5,5,5,5));
+		contentPane= crearJPanel();
 		setContentPane(contentPane);
-		GridBagLayout gbl_contentPane = new GridBagLayout();
-		gbl_contentPane.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_contentPane.rowHeights = new int[]{0, 0, 0, 0, 0, 0};
-		gbl_contentPane.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, Double.MIN_VALUE};
-		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		contentPane.setLayout(gbl_contentPane);
 		
 		btnIngresar = new JButton("Ingresar");
 		
@@ -257,15 +239,34 @@ public class Login3 extends JFrame implements Botones,Archivos
 		mntmVerDocumentacion = new JMenuItem("Ver documentacion");
 		mntmVerDocumentacion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String dirWord = "C:\\Program Files\\Microsoft Office\\Office15\\WINWORD.EXE";
+				String dirDeEstaClase = this.getClass().getProtectionDomain().getCodeSource().getLocation().toString();
+
 				//abrir un word 
 				//String dirFile = (new File(".")).getCanonicalPath();//direcion de este direcorio actual
 //				String dirFile = direccionActual();
 			//	
 //				//Process word = Runtime.getRuntime().exec(dirWord+dirFile);
-//				Process word = Runtime.getRuntime().exec(dirWord+" "+dirFile);
-			//	
+//				Process word = Runtime.getRuntime().exec(dirWord+" "+dirFile); 
 			}
 		});
 		return mntmVerDocumentacion;
+	}
+	private JPanel crearJPanel()
+	{
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5,5,5,5));
+		contentPane.setLayout(crearGridBagLayaoutParaJPanel());
+		return contentPane;
+	}
+	private GridBagLayout crearGridBagLayaoutParaJPanel()
+	{
+		GridBagLayout gbl_contentPane = new GridBagLayout();
+		gbl_contentPane.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
+		gbl_contentPane.rowHeights = new int[]{0, 0, 0, 0, 0, 0};
+		gbl_contentPane.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, Double.MIN_VALUE};
+		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+
+		return gbl_contentPane;
 	}
 }
