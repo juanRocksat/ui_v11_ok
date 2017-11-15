@@ -1,0 +1,148 @@
+package reserva_de_turnos;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.GridBagLayout;
+import javax.swing.JLabel;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.SwingConstants;
+import javax.swing.JTextArea;
+import java.awt.Font;
+import javax.swing.JScrollPane;
+
+public class Turnos2 extends JFrame
+{
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args)
+	{
+		EventQueue.invokeLater(new Runnable()
+		{
+			public void run()
+			{
+				try
+				{
+					Turnos frame=new Turnos();
+					frame.setVisible(true);
+				}
+				catch(Exception e)
+				{
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Turnos2()
+	{
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100,100,450,300);
+		
+		JMenuBar jMenuBarPrincipal = new JMenuBar();
+		jMenuBarPrincipal.setToolTipText("menuPrincipal\r\n");
+		setJMenuBar(jMenuBarPrincipal);
+		
+		JMenu mnArchivo = new JMenu("Archivo");
+		jMenuBarPrincipal.add(mnArchivo);
+		
+		JMenuItem mntmAbrirArchivoPara = new JMenuItem("Abrir Archivo para Huffman");
+		mnArchivo.add(mntmAbrirArchivoPara);
+		
+		JMenuItem mntmSalir = new JMenuItem("Salir!");
+		mnArchivo.add(mntmSalir);
+		
+		JMenu mnAyuda = new JMenu("Ayuda");
+		jMenuBarPrincipal.add(mnAyuda);
+		
+		JMenuItem mntmVerDocumentacion = new JMenuItem("ver Documentacion");
+		mnAyuda.add(mntmVerDocumentacion);
+		contentPane=new JPanel();
+		contentPane.setBorder(new EmptyBorder(5,5,5,5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Nombre: ");
+		lblNewLabel.setBounds(32, 36, 44, 14);
+		contentPane.add(lblNewLabel);
+		
+		textField = new JTextField();
+		textField.setBounds(86, 33, 86, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel_1 = new JLabel("Apellido: ");
+		lblNewLabel_1.setBounds(32, 61, 44, 14);
+		contentPane.add(lblNewLabel_1);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(86, 58, 86, 20);
+		textField_1.setColumns(10);
+		contentPane.add(textField_1);
+		
+		JLabel lblNroDeAfiliado = new JLabel("Nro. de Afiliado : ");
+		lblNroDeAfiliado.setBounds(216, 14, 86, 14);
+		contentPane.add(lblNroDeAfiliado);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(303, 11, 121, 20);
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
+		
+		JLabel lblNumero = new JLabel("Numero: ");
+		lblNumero.setBounds(248, 39, 46, 14);
+		contentPane.add(lblNumero);
+		
+		textField_3 = new JTextField();
+		textField_3.setBounds(303, 39, 121, 20);
+		contentPane.add(textField_3);
+		textField_3.setColumns(10);
+		
+		JLabel lblTipoDeDoc = new JLabel("Tipo de Doc. : ");
+		lblTipoDeDoc.setBounds(49, 101, 70, 14);
+		contentPane.add(lblTipoDeDoc);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"DNI", "DNI en tramite"}));
+		comboBox.setBounds(129, 98, 77, 20);
+		contentPane.add(comboBox);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(289, 95, 135, 128);
+		contentPane.add(scrollPane_1);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane_1.setViewportView(scrollPane);
+		
+		JTextArea txtrTextArea = new JTextArea();
+		scrollPane.setViewportView(txtrTextArea);
+		txtrTextArea.setText("a label le puse Italic ");
+		
+		JLabel lblObservaciones = new JLabel("Observaciones:");
+		lblObservaciones.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
+		lblObservaciones.setBounds(289, 81, 86, 14);
+		contentPane.add(lblObservaciones);
+		
+	}
+}
