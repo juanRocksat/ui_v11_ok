@@ -32,11 +32,11 @@ public class Login3 extends JFrame implements Botones,Archivos
 
 	private JPanel contentPane;
 	private JTextField textField_legajo;
-	public JTextField textField_password;
+	//public JTextField textField_password;
 	private JButton btnSalir;
 	
 	
-	private JPasswordField txtadmin;
+	private JPasswordField textField_password;
 
 	private String titulo ="titulo";
 	public JButton btnIngresar;
