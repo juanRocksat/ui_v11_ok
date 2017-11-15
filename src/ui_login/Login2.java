@@ -45,11 +45,11 @@ public class Login2 extends JFrame implements Botones,Archivos
 	String dirWord = "C:\\Program Files\\Microsoft Office\\Office15\\WINWORD.EXE";
 	String dirDeEstaClase = this.getClass().getProtectionDomain().getCodeSource().getLocation().toString();
 	//String dirFile = (new File(".")).getCanonicalPath();//direcion de este direcorio actual
-	String dirFile = direccionActual();
-	
-	//Process word = Runtime.getRuntime().exec(dirWord+dirFile);
-	Process word = Runtime.getRuntime().exec(dirWord+" "+dirFile);
-	
+//	String dirFile = direccionActual();
+//	
+//	//Process word = Runtime.getRuntime().exec(dirWord+dirFile);
+//	Process word = Runtime.getRuntime().exec(dirWord+" "+dirFile);
+//	
 	private JMenuBar menuBar;
 	private JMenu mnAyuda;
 	private JMenuItem mntmVerDocumentacion;
@@ -72,7 +72,7 @@ public class Login2 extends JFrame implements Botones,Archivos
 			{
 				try
 				{
-					Login frame=new Login();
+					Login2 frame=new Login2();
 					frame.setVisible(true);
 				}
 				catch(Exception e)

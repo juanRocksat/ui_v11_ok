@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import ui_login.Login;
 
 public class ListenerBotonSiguiente implements ActionListener
 {

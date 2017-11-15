@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
 import listener.login.botonSiguiente.ListenerBotonSiguiente;
-import ui_login.Login;
+
 
 @SuppressWarnings("serial")
 public class Boton extends JButton 
