@@ -7,7 +7,7 @@ package anotaciones.login;
  * @author dan
  *
  */
-public @interface Label_Legajo
+public @interface Labels
 {
 
 }

@@ -19,25 +19,7 @@ public interface Botones
 		 
 		boton.setInputMap(0, map);
 	}
-	public default void  verificarContraseña( JTextField campoContrasenia){
-		if(campoContrasenia.getText() !="admin1234"){
-			pedirReconfirmacionDeCampoContrasenia(campoContrasenia);
-		}
-		else{
-			JOptionPane.showMessageDialog(null,"------>Bienvenido!");
-		}
-	}
-	public default void pedirReconfirmacionDeCampoContrasenia( JTextField campoContrasenia){
-		int loDeReconfirmacion = JOptionPane.showConfirmDialog(null,"Esta seguro?","Ok",JOptionPane.YES_NO_CANCEL_OPTION);
-
-		if(loDeReconfirmacion ==0){
-			JOptionPane.showMessageDialog(null,"Bienvenido");
-		}
-		if(loDeReconfirmacion==1){
-			verificarContraseña(campoContrasenia);
-		}
-		//2 cancelo y -1 si cerró la ventana 
-	}
+	
 	
 //	private void hacerloPresionableConEnter2(JButton boton)
 //	{

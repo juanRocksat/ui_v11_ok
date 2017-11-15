@@ -37,7 +37,6 @@ public class Login3 extends JFrame implements Botones,Archivos
 	
 	
 	private JPasswordField txtadmin;
-	private String contraseña =new String();
 
 	private String titulo ="titulo";
 	public JButton btnIngresar;
@@ -52,7 +51,7 @@ public class Login3 extends JFrame implements Botones,Archivos
 	private JMenuItem mntmVolverALogin;
 	
 	String label_legajo="legajo",label_contrasenia="contrasenia",label_nombre="nombre" ; 
-	String botonSiguiente="siguiente",botonSalir="Salir";
+	String botonSiguiente="siguiente",botonSalir="Salir",contrasenia="admin1234";
 	
 	/**
 	 * Launch the application.
