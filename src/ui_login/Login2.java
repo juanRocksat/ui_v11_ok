@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 
 import botones.login.Boton;
 import interface_botones.Botones;
+import interface_files.Archivos;
 import listener.login.botonSiguiente.ListenerBotonSiguiente;
 
 import java.awt.GridBagLayout;
@@ -26,7 +27,7 @@ import javax.swing.JMenuItem;
 import javax.swing.event.MenuKeyListener;
 import javax.swing.event.MenuKeyEvent;
 
-public class Login2 extends JFrame implements Botones
+public class Login2 extends JFrame implements Botones,Archivos 
 {
 
 	private JPanel contentPane;
@@ -40,6 +41,15 @@ public class Login2 extends JFrame implements Botones
 
 	private String titulo ="titulo";
 	public JButton btnIngresar;
+	
+	String dirWord = "C:\\Program Files\\Microsoft Office\\Office15\\WINWORD.EXE";
+	String dirDeEstaClase = this.getClass().getProtectionDomain().getCodeSource().getLocation().toString();
+	//String dirFile = (new File(".")).getCanonicalPath();//direcion de este direcorio actual
+	String dirFile = direccionActual();
+	
+	//Process word = Runtime.getRuntime().exec(dirWord+dirFile);
+	Process word = Runtime.getRuntime().exec(dirWord+" "+dirFile);
+	
 	private JMenuBar menuBar;
 	private JMenu mnAyuda;
 	private JMenuItem mntmVerDocumentacion;

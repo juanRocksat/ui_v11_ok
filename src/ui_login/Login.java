@@ -19,6 +19,7 @@ import javax.swing.JTextField;
 import java.awt.Insets;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.awt.event.ActionEvent;
 
 public class Login extends JFrame implements Botones
@@ -33,11 +34,7 @@ public class Login extends JFrame implements Botones
 	private JPasswordField txtadmin;
 	private String contraseña =new String();
 
-	private String titulo ="titulo";
-	public JButton btnIngresar;
 	
-	String dirWord = "C:\\Program Files\\Microsoft Office\\Office15\\WINWORD.EXE";
-	Process word = 
 	
 	/**
 	 * Launch the application.
