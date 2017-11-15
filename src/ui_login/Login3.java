@@ -27,7 +27,7 @@ import javax.swing.JMenuItem;
 import javax.swing.event.MenuKeyListener;
 import javax.swing.event.MenuKeyEvent;
 
-public class Login2 extends JFrame implements Botones,Archivos 
+public class Login3 extends JFrame implements Botones,Archivos 
 {
 
 	private JPanel contentPane;
@@ -76,7 +76,7 @@ public class Login2 extends JFrame implements Botones,Archivos
 			{
 				try
 				{
-					Login2 frame=new Login2();
+					Login3 frame=new Login3();
 					frame.setVisible(true);
 				}
 				catch(Exception e)
@@ -90,58 +90,31 @@ public class Login2 extends JFrame implements Botones,Archivos
 	/**
 	 * Create the frame.
 	 */
-	public Login2()
+	public Login3()
 	{
-		setTitle("TituloDeLogin");
+		setTitle(titulo);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100,100,330,211);
 		
-		menuBar = new JMenuBar();
+		menuBar = crearMenuBar();
 		setJMenuBar(menuBar);
-		
-		mnArchivo = new JMenu("Archivo");
-		mnArchivo.addMenuKeyListener(new MenuKeyListener() {
-			public void menuKeyPressed(MenuKeyEvent e) {
-				System.exit(0);
-			}
-			public void menuKeyReleased(MenuKeyEvent e) {
-			}
-			public void menuKeyTyped(MenuKeyEvent e) {
-			}
-		});
+		mnArchivo = crearMenuArchivo();
 		menuBar.add(mnArchivo);
 		
-		mntmSalir = new JMenuItem("Salir!");
-		mntmSalir.addMenuKeyListener(new MenuKeyListener() {
-			public void menuKeyPressed(MenuKeyEvent e) {
-			}
-			public void menuKeyReleased(MenuKeyEvent e) {
-			}
-			public void menuKeyTyped(MenuKeyEvent e) {
-			}
-		});
 		
-		mntmAbrirFilePara = new JMenuItem("Abrir File para Huffman ");
+		
+		mntmAbrirFilePara = crearJMenuItemParaAbrirFile();
 		mnArchivo.add(mntmAbrirFilePara);
 		
-		mntmVolverALogin = new JMenuItem("reiniciar");
-		mntmVolverALogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//setear los labels 
-			}
-		});
+		mntmVolverALogin = crearJMenuItemReiniciar();
+		mntmSalir = crearSubMenuDeArchivo();
 		mnArchivo.add(mntmVolverALogin);
 		mnArchivo.add(mntmSalir);
 		
 		mnAyuda = new JMenu("Ayuda!");
 		menuBar.add(mnAyuda);
 		
-		mntmVerDocumentacion = new JMenuItem("Ver documentacion");
-		mntmVerDocumentacion.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//abrir un word 
-			}
-		});
+		mntmVerDocumentacion = crearJMenuItemParaAbrirDocumentacion();
 		mnAyuda.add(mntmVerDocumentacion);
 		contentPane=new JPanel();
 		contentPane.setBorder(new EmptyBorder(5,5,5,5));
@@ -228,6 +201,71 @@ public class Login2 extends JFrame implements Botones,Archivos
 		contentPane.add(btnSalir, gbc_btnSalir);
 		hacerloPresionableConEnter(btnSalir);
 	}
+	private JMenuBar crearMenuBar()
+	{
+		menuBar = new JMenuBar();
 
+		return  menuBar;
+	}
+	private JMenu crearMenuArchivo()
+	{
+		// TODO Auto-generated method stub
+		mnArchivo = new JMenu("Archivo");
+		mnArchivo.addMenuKeyListener(new MenuKeyListener() {
+			public void menuKeyPressed(MenuKeyEvent e) {
+				System.exit(0);
+			}
+			public void menuKeyReleased(MenuKeyEvent e) {
+			}
+			public void menuKeyTyped(MenuKeyEvent e) {
+			}
+		});
 
+		return mnArchivo;
+	}
+	private JMenuItem crearSubMenuDeArchivo()
+	{
+		mntmSalir = new JMenuItem("Salir!");
+		mntmSalir.addMenuKeyListener(new MenuKeyListener() {
+			public void menuKeyPressed(MenuKeyEvent e) {
+			}
+			public void menuKeyReleased(MenuKeyEvent e) {
+			}
+			public void menuKeyTyped(MenuKeyEvent e) {
+			}
+		});
+		return mntmSalir;
+	}
+	private JMenuItem crearJMenuItemParaAbrirFile()
+	{
+		mntmAbrirFilePara = new JMenuItem("Abrir File para Huffman ");
+		return mntmAbrirFilePara;
+		// TODO Auto-generated method stub
+	}
+	private JMenuItem crearJMenuItemReiniciar()
+	{
+		mntmVolverALogin = new JMenuItem("reiniciar");
+		mntmVolverALogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//setear los labels 
+			}
+		});
+		return mntmVolverALogin;
+	}
+	private JMenuItem crearJMenuItemParaAbrirDocumentacion()
+	{
+		mntmVerDocumentacion = new JMenuItem("Ver documentacion");
+		mntmVerDocumentacion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//abrir un word 
+				//String dirFile = (new File(".")).getCanonicalPath();//direcion de este direcorio actual
+//				String dirFile = direccionActual();
+			//	
+//				//Process word = Runtime.getRuntime().exec(dirWord+dirFile);
+//				Process word = Runtime.getRuntime().exec(dirWord+" "+dirFile);
+			//	
+			}
+		});
+		return mntmVerDocumentacion;
+	}
 }
