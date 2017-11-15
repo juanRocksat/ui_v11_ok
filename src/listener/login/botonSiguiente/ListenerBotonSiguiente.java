@@ -50,5 +50,4 @@ public class ListenerBotonSiguiente implements ActionListener,Botones
 	{
 		JOptionPane.showMessageDialog(null,s);
 	}
-
 }
