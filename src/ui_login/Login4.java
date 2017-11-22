@@ -27,7 +27,7 @@ import javax.swing.JMenuItem;
 import javax.swing.event.MenuKeyListener;
 import javax.swing.event.MenuKeyEvent;
 
-public class Login3 extends JFrame implements Botones,Archivos 
+public class Login4 extends JFrame implements Botones,Archivos 
 {
 
 	private JPanel contentPane;
@@ -64,7 +64,7 @@ public class Login3 extends JFrame implements Botones,Archivos
 			{
 				try
 				{
-					Login3 frame=new Login3();
+					Login4 frame=new Login4();
 					frame.setVisible(true);
 				}
 				catch(Exception e)
@@ -74,10 +74,11 @@ public class Login3 extends JFrame implements Botones,Archivos
 			}
 		});
 	}
+
 	/**
 	 * Create the frame.
 	 */
-	public Login3()
+	public Login4()
 	{
 		setTitle(titulo);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
