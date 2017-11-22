@@ -54,7 +54,6 @@ public class Pantalla3Ejemplo extends JFrame {
             }
         });
     }
-
     private void printDebugData(JTable table) {
         int numRows = table.getRowCount();
         int numCols = table.getColumnCount();
