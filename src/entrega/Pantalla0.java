@@ -20,7 +20,7 @@ import java.awt.event.ActionEvent;
 public class Pantalla0 extends JFrame
 {
 	JComboBox comboBox;
-	Pantalla2a siguiente;//=new Pantalla2a();
+	Pantalla2b pantallaSiguiente;//=new Pantalla2a();
 	private JPanel contentPane;
 	Pantalla0 pantallaActual=this;
 
@@ -74,8 +74,11 @@ public class Pantalla0 extends JFrame
 		JButton btnSiguiente = new JButton("Siguiente");
 		btnSiguiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				siguiente=new Pantalla2a(pantallaActual);//aqui el this corresponde al listener
+//				siguiente=new Pantalla2a(pantallaActual);//aqui el this corresponde al listener
 //				siguiente.setPantallaSiguiente(this);
+				//pantallaSiguiente.setPantallaSiguiente(new Pantalla2b());
+				pantallaSiguiente=new Pantalla2b();
+				pantallaSiguiente.toFront();
 				
 			}
 		});
@@ -98,4 +101,6 @@ public class Pantalla0 extends JFrame
 			comboBox.addItem(EstudiantesDB.buscarEstudiante(i).getLegajo());
 		}
 	}
+
+
 }
