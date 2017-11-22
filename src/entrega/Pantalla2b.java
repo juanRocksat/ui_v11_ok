@@ -17,7 +17,7 @@ import java.awt.Insets;
 
 public class Pantalla2b extends JFrame
 {
-	JFrame pantallaSiguiente;
+	Pantalla0 pantallaSiguiente;
 	JFrame pantallaActual=this;
 	private JPanel contentPane;
 	private JTable table;
@@ -49,7 +49,7 @@ public class Pantalla2b extends JFrame
 	 */
 	public Pantalla2b()
 	{
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100,100,450,300);
 		contentPane=new JPanel();
 		contentPane.setBorder(new EmptyBorder(5,5,5,5));
@@ -84,7 +84,6 @@ public class Pantalla2b extends JFrame
 		JButton btnSiguiente = new JButton("Siguiente");
 		btnSiguiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				pantallaSiguiente.toFront();
 				pantallaSiguiente.setVisible(true);
 			}
 		});
@@ -101,8 +100,7 @@ public class Pantalla2b extends JFrame
 	{
 		return pantallaSiguiente;
 	}
-
-	public void setPantallaSiguiente(Pantalla2b pantallaSiguiente)
+	public void setPantallaSiguiente(Pantalla0 pantallaSiguiente)
 	{
 		this.pantallaSiguiente=pantallaSiguiente;
 	}

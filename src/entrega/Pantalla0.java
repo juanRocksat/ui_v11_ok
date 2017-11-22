@@ -22,7 +22,7 @@ public class Pantalla0 extends JFrame
 	JComboBox comboBox;
 	Pantalla2b pantallaSiguiente;//=new Pantalla2a();
 	private JPanel contentPane;
-	Pantalla0 pantallaActual=this;
+	public Pantalla0 pantallaActual=this;
 
 	/**
 	 * Launch the application.
@@ -51,7 +51,7 @@ public class Pantalla0 extends JFrame
 	 */
 	public Pantalla0()
 	{
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100,100,450,300);
 		contentPane=new JPanel();
 		contentPane.setBorder(new EmptyBorder(5,5,5,5));
@@ -79,6 +79,7 @@ public class Pantalla0 extends JFrame
 				//pantallaSiguiente.setPantallaSiguiente(new Pantalla2b());
 				pantallaSiguiente=new Pantalla2b();
 				pantallaSiguiente.toFront();
+				pantallaSiguiente.setPantallaSiguiente(pantallaActual);
 				
 			}
 		});
